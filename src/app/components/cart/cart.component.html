@@ -1,0 +1,9 @@
+<app-product-list></app-product-list>
+<h1>Cart</h1>
+@for(item of cartService.getItems(); track item.id){
+    <div class="cart-items">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.price }}</p>
+        <button (click)="deleteFromCart(item)">Delete</button>
+    </div>
+}
